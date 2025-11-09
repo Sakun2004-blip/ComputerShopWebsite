@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha-X Computer | Sign Up</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .signup-container {
+            background-color: #fff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .signup-container h2 {
+            text-align: center;
+            color: #1e3c72;
+            margin-bottom: 20px;
+        }
+
+        .signup-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .signup-container input {
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .signup-container button {
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 6px;
+            background-color: #1e3c72;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .signup-container button:hover {
+            background-color: #2a5298;
+        }
+
+        .signup-container .login-link {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .signup-container .login-link a {
+            color: #1e3c72;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: -5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Alpha-X Sign Up</h2>
+        <form id="signupForm">
+            <input type="text" id="username" placeholder="Username" required>
+            <div class="error" id="usernameError"></div>
+            
+            <input type="email" id="email" placeholder="Email" required>
+            <div class="error" id="emailError"></div>
+            
+            <input type="password" id="password" placeholder="Password" required>
+            <div class="error" id="passwordError"></div>
+            
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+            <div class="error" id="confirmPasswordError"></div>
+
+            <button type="submit">Sign Up</button>
+        </form>
+        <div class="login-link">
+            Already have an account? <a href="#">Login</a>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('signupForm');
+        const username = document.getElementById('username');
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+        const confirmPassword = document.getElementById('confirmPassword');
+
+        const usernameError = document.getElementById('usernameError');
+        const emailError = document.getElementById('emailError');
+        const passwordError = document.getElementById('passwordError');
+        const confirmPasswordError = document.getElementById('confirmPasswordError');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let valid = true;
+
+          
+            usernameError.textContent = '';
+            emailError.textContent = '';
+            passwordError.textContent = '';
+            confirmPasswordError.textContent = '';
+
+        
+            if(username.value.length < 3) {
+                usernameError.textContent = 'Username must be at least 3 characters.';
+                valid = false;
+            }
+
+       
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if(!email.value.match(emailPattern)) {
+                emailError.textContent = 'Please enter a valid email.';
+                valid = false;
+            }
+
+        
+            if(password.value.length < 6) {
+                passwordError.textContent = 'Password must be at least 6 characters.';
+                valid = false;
+            }
+
+     
+            if(password.value !== confirmPassword.value) {
+                confirmPasswordError.textContent = 'Passwords do not match.';
+                valid = false;
+            }
+
+            if(valid) {
+                alert('Sign Up Successful!');
+                form.reset();
+            }
+        });
+    </script>
+</body>
+</html>
