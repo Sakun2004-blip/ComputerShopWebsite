@@ -1,12 +1,16 @@
 <html>
     <head>
         <title>Project_About.html</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
         <style>
            .H1{
             text-align:center;
-            font-family: 'Times New Roman', Times, serif;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
             font-size: 80px;
-            color:brown;
+            color:purple;
+           }
+           .Container{
+            background-color: aqua;
            }
            p{
             font-size: 20px;
@@ -28,16 +32,20 @@
             position: relative;
             align-items: center;
            }
+           .Header{
+            height:100px;
+            background-color: aqua;
+           }
         </style>
     </head>
     <body>
-        <hr class="blue-line">
-        <h1 class="H1">Bio</h1>
-        <div class="image_container_3"></div>
-        <img src="Project Images/image 12.jpg"height="300px"width="400px">
+          <div class="text-bg-warning p-3">
+            <h1 class="H1">Bio</h1>
+          </div>
+        <div class="text-bg-info p-3"></div>
+         <img src="Project Images/image 12.jpg"height="300px"width="400px">
          <img src="Project Images/images 13.jpg"height="300px"width="400px">
          <img src="Project Images/images 14.jpg"height="300px"width="400px">
-        </div>
         <p>Alpha-X Computers (Pvt Ltd) is a dynamic technology enterprise located in Maharagama, Colombo 6, Sri Lanka. Founded with the vision to deliver cutting-edge computing solutions to both home users and business organisations, the company has built a reputation for reliability, expertise and innovation in the local IT market.</p>
         <p>From its first day, Alpha-X Computers has committed to offering high-quality hardware, software and support services — whether that means custom-built PCs, effective repairs, or upgrades to keep customers ahead of technological change. The team understands that in today’s fast-moving digital world, staying current matters</p>
         <p>At the heart of the company’s mission is the principle of partnership: not simply selling products, but collaborating with clients to understand their requirements, recommend appropriate solutions, and provide ongoing service. The goal is to be a trusted advisor, not just a supplier</p>
@@ -59,7 +67,9 @@
         Your browser does not support the video tag.
       </video>
     </div>
-        <hr class="blue-line">
+    </div>
+    <button type="button" class="btn btn-dark"onclick="window.location.href='Project 1.html'">Home</button>
+       <hr class="Header">
 
      
     </body>
